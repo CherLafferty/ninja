@@ -2,23 +2,34 @@
 // add attributes name, health, speed, strength
 // add methods sayName(), showStats(), and drinkSake()
 class Ninja {
-    constructor(ninjaName) {
+    constructor(ninjaName, health=25) {
         this.ninjaName = ninjaName;
-        this.health = 25;
+        this.health = health;
         this.speed = 3;
         this.strength = 3;
     }
+    //add a method: sayName() - This should log that Ninja's name to the console
     sayName() {
-        console.log(this.ninjaName);
+        console.log('My name is ' + this.ninjaName);
+        return this;
     }
+    //add a method: showStats() - This should show the Ninja's name, strength, speed, and health. 
     showStats() {
-        console.log(this.ninjaName, this.strength, this.speed, this.health);
+        console.log('Ninja Name is ' + this.ninjaName);
+        console.log('Strength is: ' + this.strength);
+        console.log('Speed is: ' + this.speed);
+        console.log('Health is: ' + this.health);
+        return this;
     }
+    //add a method: drinkSake() - This should add +10 Health to the Ninja 
     drinkSake() {
+        console.log(this.ninjaName + ' drank sake.');
         this.health += 10;
-        console.log(this.health);
+        return this;
     }
 }
 const ninja1 = new Ninja("Slicer")
 ninja1.sayName();
+ninja1.showStats();
+ninja1.drinkSake();
 ninja1.showStats();
